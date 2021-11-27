@@ -1,0 +1,12 @@
+.titulo {
+  color: lightskyblue;
+  text-align: center;
+}
+
+.imagem{
+ width: 400px;
+ height: 300px;
+ display: block;
+ margin: 0 auto;
+ 
+}
