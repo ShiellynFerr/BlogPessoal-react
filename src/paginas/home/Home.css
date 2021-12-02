@@ -1,12 +1,17 @@
-.titulo {
-  color: lightskyblue;
-  text-align: center;
+.cor-home {
+  background-color: #000000;
 }
 
-.imagem{
- width: 400px;
- height: 300px;
- display: block;
- margin: 0 auto;
- 
+.titulo {
+  color: white;
+}
+
+.botão {
+  border-color: #ffffff !important;
+  background-color: #3f51b5;
+  color: #3f51b5 !important;
+}
+
+.background-branco{
+  background-color:#3f51b5 ;
 }

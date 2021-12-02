@@ -3,3 +3,11 @@
   #d0c0ac,
   #c1493e);
 }
+.text-decorator-none{
+  text-decoration: none;
+}
+
+.cursor{
+  cursor: pointer;
+  color: #ffffff;
+}

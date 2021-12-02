@@ -10,27 +10,25 @@ function Home() {
         direction="row"
         justifyContent="center"
         alignItems="center"
-        style={{ backgroundColor: "#3F51B5" }}
+      className='cor-home'
       >
         <Grid alignItems="center" item xs={6}>
           <Box paddingX={20}>
             <Typography
               variant="h3"
               gutterBottom
-              color="textPrimary"
               component="h3"
               align="center"
-              style={{ color: "white", fontWeight: "bold" }}
+              className='titulo'
             >
               Seja bem vindo(a)!
             </Typography>
             <Typography
               variant="h5"
               gutterBottom
-              color="textPrimary"
               component="h5"
               align="center"
-              style={{ color: "white", fontWeight: "bold" }}
+              className='titulo'
             >
               expresse aqui os seus pensamentos e opiniões!
             </Typography>
@@ -39,11 +37,8 @@ function Home() {
             <Box marginRight={1}></Box>
             <Button
               variant="outlined"
-              style={{
-                borderColor: "white",
-                backgroundColor: "#3F51B5",
-                color: "white",
-              }}
+              color="primary"
+              className='botão'
             >
               Ver Postagens
             </Button>
@@ -51,13 +46,13 @@ function Home() {
         </Grid>
         <Grid item xs={6}>
           <img
-            src="https://i.imgur.com/H88yIo2.png"
+            src="https://c4.wallpaperflare.com/wallpaper/623/406/502/movie-black-widow-marvel-comics-scarlett-johansson-hd-wallpaper-preview.jpg"
             alt=""
-            width="500px"
-            height="500px"
+            width="675px"
+            // height="400px"
           />
         </Grid>
-        <Grid xs={12} style={{ backgroundColor: "white" }}></Grid>
+        <Grid xs={12} className='background-branco'></Grid>
       </Grid>
     </>
   );
