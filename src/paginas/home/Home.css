@@ -7,11 +7,29 @@
 }
 
 .botão {
-  border-color: #ffffff !important;
   background-color: #3f51b5;
-  color: #3f51b5 !important;
+  color: #3f51b5;
 }
 
 .background-branco{
   background-color:#3f51b5 ;
 }
+
+.background {
+  background: linear-gradient(
+    to rigth #33264f,
+    #cd9495,
+    #8b415f,
+    #8878b4,
+    #9da2c8
+  );
+}
+
+/* .background{
+  background-image: url("../../assets/images/arcane.jpg");
+  background-repeat: no-repeat;
+  width: 100vh;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+} */

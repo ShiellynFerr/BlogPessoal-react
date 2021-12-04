@@ -1,10 +1,28 @@
-.text-decorator-none{
+.text-decorator-none {
   text-decoration: none;
 }
 
-.linear-gradient{
-  background: linear-gradient(to rigth 
-  #33264f,
-  #cd9495,
-  #8b415f,#8878b4,#9da2c8);
+.background {
+  background: linear-gradient(to rigth #33264f, #cd9495, #8b415f, #8878b4);
+}
+
+.background-2 {
+  background: linear-gradient(to right #461269, #ce64a7, #a02986,#a180bc);
+}
+
+.texto-bold {
+  font-weight: bold !important;
+}
+
+.imagem-login {
+  background-image: url(https://c4.wallpaperflare.com/wallpaper/768/896/878/4k-wonder-woman-gal-gadot-wallpaper-preview.jpg);
+  background-repeat: non-repeat;
+  width: 100vh;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+}
+
+.cor-login {
+  background-color: salmon;
 }

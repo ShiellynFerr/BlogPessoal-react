@@ -10,37 +10,42 @@ import "./Navbar.css";
 function Navbar() {
   return (
     <>
-      <AppBar position="static">
+      <AppBar position="static" className="background">
         <Toolbar variant="dense">
-          <Box className='cursor'>
+          <Box className="cursor">
             <Typography variant="h5" color="inherit">
-              BlogPessoal
+              Blog Power Girls
             </Typography>
           </Box>
 
-          <Box display="flex" justifyContent="start">
-            <Box mx={1} className='cursor'>
+          <Box
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+            marginX="auto"
+          >
+            <Box mx={1} className="cursor">
               <Typography variant="h6" color="inherit">
                 home
               </Typography>
             </Box>
-            <Box mx={1} className='cursor'>
+            <Box mx={1} className="cursor">
               <Typography variant="h6" color="inherit">
                 postagens
               </Typography>
             </Box>
-            <Box mx={1} className='cursor'>
+            <Box mx={1} className="cursor">
               <Typography variant="h6" color="inherit">
                 temas
               </Typography>
             </Box>
-            <Box mx={1}className='cursor'>
+            <Box mx={1} className="cursor">
               <Typography variant="h6" color="inherit">
                 cadastrar tema
               </Typography>
             </Box>
             <Link to="/Login" className="text-decorator-none">
-              <Box mx={1} className='cursor'>
+              <Box mx={1} className="cursor">
                 <Typography variant="h6" color="inherit">
                   login
                 </Typography>

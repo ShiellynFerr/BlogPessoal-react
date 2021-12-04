@@ -1,0 +1,26 @@
+.imagem-cadastro {
+  background-image: url(https://c4.wallpaperflare.com/wallpaper/1/529/296/girl-red-fire-beautiful-wallpaper-preview.jpg);
+  background-repeat: non-repeat;
+  width: 100vh;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+}
+.padding-10{
+  padding: 20px;
+}
+
+.btn-cancelar{
+  margin-right: 20px !important;
+}
+
+.background {
+  background: linear-gradient(
+    to rigth #33264f,
+    #cd9495,
+    #8b415f,
+    #8878b4,
+    #9da2c8
+  );
+}
+

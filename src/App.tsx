@@ -4,9 +4,12 @@ import { Grid, Paper } from "@material-ui/core";
 import Home from "./paginas/home/Home";
 import Navbar from "./componentes/estaticos/navbar/Navbar";
 import Footer from "./componentes/estaticos/footer/Footer";
+import cadastroUsuario from "./paginas/cadastroUsuario/CadastroUsuario";
+
 import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Login from "./paginas/login/Login";
+import CadastroUsuario from "./paginas/cadastroUsuario/CadastroUsuario";
 function App() {
   return (
     //componente principal de rotas
@@ -21,6 +24,9 @@ function App() {
           </Route>
           <Route path="/home">
             <Home />
+          </Route>
+          <Route path="/cadastroUsuario">
+           <CadastroUsuario/>
           </Route>
         </div>
       </Switch>
