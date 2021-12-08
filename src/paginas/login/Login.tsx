@@ -1,14 +1,14 @@
-import React, { ChangeEvent, useState } from "react";
+import React, { useState, useEffect, ChangeEvent } from "react";
 import "./Login.css";
 import { Grid, Box, Typography, TextField, Button } from "@material-ui/core";
 import { Link, useHistory } from "react-router-dom";
 import useLocalStorage from "react-use-localstorage";
-import { api } from "../../services/Service";
+import { login } from "../../services/Service";
 import UserLogin from "../../models/UserLogin";
 function Login() {
   let history = useHistory();
   const [token, setToken] = useLocalStorage("token");
-  const [UserLogin, setUserLogin] = useState<UserLogin>({
+  const [userLogin, setUserLogin] = useState<UserLogin>({
     id: 0,
     usuario: "",
     senha: "",
@@ -17,7 +17,7 @@ function Login() {
 
   function uptadeModel(e: ChangeEvent<HTMLInputElement>) {
     setUserLogin({
-      ...UserLogin,
+      ...userLogin,
       [e.target.name]: e.target.value,
     });
   }
@@ -25,24 +25,30 @@ function Login() {
   async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
     e.preventDefault(); //previne o comportamento padrão do botão, impedi que o botão atualize a tela
     try {
-      const resposta = await api.post(`/usuarios/logar`, UserLogin); // dados de tentativa conexão
-      setToken(resposta.data.token)
-      alert('Usuário logado com sucesso!')
+      await login(`/usuarios/logar`, userLogin, setToken); // dados de tentativa conexão
+      console.log("TOken "+JSON.stringify(setUserLogin));
+      alert("Usuário logado com sucesso!");
 
       //variavel resposta, é a resposta da requisição a api
       // await = é preciso aguardar enquanto a api da uma resposta
-    } catch(error){
-      alert('Dados do usuário inconsistentes,erro ao logar.')
-
+    } catch (error) {
+      alert("Dados do usuário inconsistentes,erro ao logar.");
     }
   }
+
+  useEffect(() => {
+    if (token != "") {
+      history.push("/home");
+    }
+  }, [token]);
+
   return (
     <Grid
       container
       direction="row"
       justifyContent="center"
       alignItems="center"
-      className="background"
+      className="background-login"
     >
       <Grid alignItems="center" xs={6}>
         <Box paddingX={20}>
@@ -58,7 +64,7 @@ function Login() {
               Entrar
             </Typography>
             <TextField
-              value={UserLogin.usuario}
+              value={userLogin.usuario}
               onChange={(e: ChangeEvent<HTMLInputElement>) => uptadeModel(e)}
               type="email"
               id="usuario"
@@ -69,7 +75,7 @@ function Login() {
               fullWidth
             />
             <TextField
-              value={UserLogin.senha}
+              value={userLogin.senha}
               onChange={(e: ChangeEvent<HTMLInputElement>) => uptadeModel(e)}
               type="password"
               id="senha"

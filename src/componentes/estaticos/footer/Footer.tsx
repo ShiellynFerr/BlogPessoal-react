@@ -16,7 +16,7 @@ function Footer() {
         
       >
         <Grid alignItems="center" item xs={12}>
-          <Box className='box-footer background'>
+          <Box className='box-footer cor-footer'>
             <Box
               paddingTop={1}
               display="flex"
@@ -53,7 +53,7 @@ function Footer() {
               </a>
             </Box>
           </Box>
-          <Box className='box-footer2 background'>
+          <Box className='box-footer2 cor-footer'>
             <Box paddingTop={1}>
               <Typography
                 variant="subtitle2"

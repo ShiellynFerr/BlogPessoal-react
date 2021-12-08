@@ -10,6 +10,8 @@ import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Login from "./paginas/login/Login";
 import CadastroUsuario from "./paginas/cadastroUsuario/CadastroUsuario";
+import ListaTema from "./componentes/temas/listatema/ListaTema";
+import ListaPostagem from "./componentes/postagens/listapostagem/ListaPostagem";
 function App() {
   return (
     //componente principal de rotas
@@ -27,6 +29,13 @@ function App() {
           </Route>
           <Route path="/cadastroUsuario">
            <CadastroUsuario/>
+          </Route>
+          <Route path="/temas">
+           <ListaTema/>
+          
+          </Route>
+          <Route path="/posts">
+           <ListaPostagem/>
           </Route>
         </div>
       </Switch>

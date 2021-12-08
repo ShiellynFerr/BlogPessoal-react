@@ -1,5 +1,5 @@
 .imagem-cadastro {
-  background-image: url(https://c4.wallpaperflare.com/wallpaper/1/529/296/girl-red-fire-beautiful-wallpaper-preview.jpg);
+  background-image: url(https://c4.wallpaperflare.com/wallpaper/292/134/557/scarlett-johansson-black-widow-women-actress-wallpaper-preview.jpg);
   background-repeat: non-repeat;
   width: 100vh;
   min-height: 100vh;
@@ -14,13 +14,7 @@
   margin-right: 20px !important;
 }
 
-.background {
-  background: linear-gradient(
-    to rigth #33264f,
-    #cd9495,
-    #8b415f,
-    #8878b4,
-    #9da2c8
-  );
+.background-cadastro{
+  background: linear-gradient(500deg,#bc77,#0e0811,#622e58,#6c4898,#8086d4);
 }
 
