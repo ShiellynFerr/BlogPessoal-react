@@ -1,6 +1,6 @@
 import React from "react";
 import { Grid, Typography, Button, Box } from "@material-ui/core";
-import TabPostagem from '../../componentes/postagens/tabpostagem/TabPostagem';
+import TabPostagem from "../../componentes/postagens/tabpostagem/TabPostagem";
 import "./Home.css";
 
 function Home() {
@@ -12,7 +12,7 @@ function Home() {
           direction="row"
           justifyContent="center"
           alignItems="center"
-          className="background "
+          className="background-home "
         >
           <Grid alignItems="center" item xs={6}>
             <Box paddingX={20}>
@@ -32,8 +32,8 @@ function Home() {
                 align="center"
                 className="titulo"
               >
-                Ao Blog Power Girls, um blog dedicado a personagens femininas do
-                universo dos heróis, séries e filmes
+                Ao Blog Las Girls, um blog dedicado a personagens femininas do
+                universo dos heróis, séries e filmes!
               </Typography>
             </Box>
             <Box display="flex" justifyContent="center">
@@ -52,7 +52,7 @@ function Home() {
             />
           </Grid>
           <Grid xs={12} className="background-branco">
-            <TabPostagem/>
+            <TabPostagem />
           </Grid>
         </Grid>
       </Box>

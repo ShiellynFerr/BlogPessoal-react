@@ -15,14 +15,8 @@
   background-color:#3f51b5 ;
 }
 
-.background {
-  background: linear-gradient(
-    to rigth #33264f,
-    #cd9495,
-    #8b415f,
-    #8878b4,
-    #9da2c8
-  );
+.background-home{
+  background: linear-gradient(200deg,#bc77,#0e0811,#622e58,#6c4898,#8086d4);
 }
 
 /* .background{
@@ -33,3 +27,12 @@
   background-size: cover;
   background-position: center;
 } */
+
+.background-img{
+  background-image: url("https://c4.wallpaperflare.com/wallpaper/973/891/680/the-avengers-avengers-endgame-avengers-endgame-gamora-zoe-saldana-hd-wallpaper-preview.jpg");
+  background-repeat: no-repeat;
+  width: 100vh;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+}
