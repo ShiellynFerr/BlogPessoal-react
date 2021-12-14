@@ -1,9 +1,35 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Grid, Typography, Button, Box } from "@material-ui/core";
 import TabPostagem from "../../componentes/postagens/tabpostagem/TabPostagem";
 import "./Home.css";
+import ModalPostagem from "../../componentes/postagens/modalPostagem/ModalPostagem";
+import { Link, useHistory } from "react-router-dom";
+import { TokenState } from "../../store/tokens/tokensReducer";
+import { useSelector } from "react-redux";
+import {toast} from 'react-toastify';
 
 function Home() {
+
+  let history = useHistory();
+  const token = useSelector<TokenState, TokenState["tokens"]>(
+    (state) => state.tokens);
+    
+    useEffect(() => {
+      if (token == "") {
+        toast.error('Você precisa estar logado', {
+          position:"top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: true,
+          theme:"colored",
+          progress:undefined,
+        });
+          history.push("/login")
+  
+      }
+  }, [token])
   return (
     <>
       <Box>
@@ -37,10 +63,14 @@ function Home() {
               </Typography>
             </Box>
             <Box display="flex" justifyContent="center">
-              <Box marginRight={1}></Box>
+              <Box marginRight={1}>
+                <ModalPostagem/>
+              </Box>
+              <Link to="/posts">
               <Button variant="outlined" color="primary" className="botão">
-                Saiba mais
+                Ver postagens
               </Button>
+              </Link>
             </Box>
           </Grid>
           <Grid item xs={6}>

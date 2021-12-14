@@ -2,12 +2,15 @@ import React, { useState, useEffect, ChangeEvent } from "react";
 import "./Login.css";
 import { Grid, Box, Typography, TextField, Button } from "@material-ui/core";
 import { Link, useHistory } from "react-router-dom";
-import useLocalStorage from "react-use-localstorage";
 import { login } from "../../services/Service";
 import UserLogin from "../../models/UserLogin";
+import { useDispatch } from "react-redux";
+import { addToken } from "../../store/tokens/actions";
+import {toast} from 'react-toastify';
 function Login() {
   let history = useHistory();
-  const [token, setToken] = useLocalStorage("token");
+  const dispatch = useDispatch();
+  const [token, setToken] = useState('');
   const [userLogin, setUserLogin] = useState<UserLogin>({
     id: 0,
     usuario: "",
@@ -27,17 +30,36 @@ function Login() {
     try {
       await login(`/usuarios/logar`, userLogin, setToken); // dados de tentativa conexão
       console.log("TOken "+JSON.stringify(setUserLogin));
-      alert("Usuário logado com sucesso!");
+      toast.success('Usuário logado com sucesso', {
+        position:"top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        theme:"colored",
+        progress:undefined,
+      });
 
       //variavel resposta, é a resposta da requisição a api
       // await = é preciso aguardar enquanto a api da uma resposta
     } catch (error) {
-      alert("Dados do usuário inconsistentes,erro ao logar.");
+      toast.error('Dados do usuário inconsistentes,erro ao logar.', {
+        position:"top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        theme:"colored",
+        progress:undefined,
+      });
     }
   }
 
   useEffect(() => {
     if (token != "") {
+      dispatch(addToken(token))
       history.push("/home");
     }
   }, [token]);
