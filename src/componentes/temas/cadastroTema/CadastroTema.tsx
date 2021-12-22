@@ -98,7 +98,7 @@ function CadastroTema() {
   }
 
   function back() {
-    history.push("/temas");
+    history.push("/tema");
   }
 
   return (
